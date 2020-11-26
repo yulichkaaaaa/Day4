@@ -36,7 +36,8 @@ public class FibonacciService {
                 j++;
             }
         }
-        return new CustomArray(result);
+        customArray.setArray(result);
+        return customArray;
     }
 
     public int[] fibonacciArray(int count){

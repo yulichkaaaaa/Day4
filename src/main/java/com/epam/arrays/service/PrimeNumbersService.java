@@ -20,7 +20,8 @@ public class PrimeNumbersService {
                 ind++;
             }
         }
-        return new CustomArray(primeArray);
+        customArray.setArray(primeArray);
+        return customArray;
     }
 
     public boolean isPrime(int num){

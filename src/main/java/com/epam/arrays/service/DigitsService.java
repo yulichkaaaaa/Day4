@@ -23,7 +23,8 @@ public class DigitsService {
                 count++;
             }
         }
-        return new CustomArray(result);
+        customArray.setArray(result);
+        return customArray;
     }
 
     public int digitsInNumber(int number){
