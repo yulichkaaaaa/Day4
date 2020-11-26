@@ -6,7 +6,7 @@ public class DigitsService {
 
     public CustomArray noSameDigits(CustomArray customArray, int digitsCount){
         int[] array = customArray.getArray();
-        int[] digits, result;
+        int[] digits;
         int length = 0;
         int count = 0;
         for(int number : array){
@@ -15,7 +15,7 @@ public class DigitsService {
                 length++;
             }
         }
-        result = new int[length];
+        int[] result = new int[length];
         for(int number : array){
             digits = numberToDigits(number);
             if((digitsInNumber(number) == digitsCount) && !hasSameDigits(digits)){
