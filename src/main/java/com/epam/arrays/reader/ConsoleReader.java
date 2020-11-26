@@ -1,10 +1,12 @@
-package com.epam.task1.reader;
+package com.epam.arrays.reader;
+
+import com.epam.arrays.entity.CustomArray;
 
 import java.util.Scanner;
 
 public class ConsoleReader {
 
-    public int[] readArray(){
+    public CustomArray readArray(){
         Scanner input = new Scanner(System.in);
         int[] result;
         System.out.print("Input count of array elements: ");
@@ -14,6 +16,6 @@ public class ConsoleReader {
         for (int i = 0; i < length; i++) {
             result[i] = input.nextInt();
         }
-        return result;
+        return new CustomArray(result);
     }
 }

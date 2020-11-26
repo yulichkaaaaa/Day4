@@ -1,7 +1,7 @@
-package com.epam.task1;
+package com.epam.arrays;
 
-import com.epam.task1.entity.CustomArray;
-import com.epam.task1.service.DigitsService;
+import com.epam.arrays.entity.CustomArray;
+import com.epam.arrays.service.DigitsService;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;

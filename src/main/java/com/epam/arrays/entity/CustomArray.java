@@ -1,7 +1,6 @@
-package com.epam.task1.entity;
+package com.epam.arrays.entity;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class CustomArray {
 
@@ -14,11 +13,15 @@ public class CustomArray {
     public CustomArray(){}
 
     public int[] getArray() {
-        return array;
+        return Arrays.copyOf(array, array.length);
     }
 
     public void setArray(int[] array) {
         this.array = array;
+    }
+
+    public int getElement(int index){
+        return array[index];
     }
 
     @Override

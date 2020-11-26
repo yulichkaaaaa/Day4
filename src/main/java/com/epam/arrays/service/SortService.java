@@ -1,6 +1,6 @@
-package com.epam.task1.service;
+package com.epam.arrays.service;
 
-import com.epam.task1.entity.CustomArray;
+import com.epam.arrays.entity.CustomArray;
 
 public class SortService {
     public CustomArray insertionSort(CustomArray customArray) {

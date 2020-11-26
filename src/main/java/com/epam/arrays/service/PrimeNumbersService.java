@@ -1,8 +1,11 @@
-package com.epam.task1.service;
+package com.epam.arrays.service;
+
+import com.epam.arrays.entity.CustomArray;
 
 public class PrimeNumbersService {
 
-    public int[] primeNumbers(int[] array){
+    public CustomArray findPrimeNumbers(CustomArray customArray){
+        int[] array = customArray.getArray();
         int count = 0;
         for(int i = 0; i < array.length; i++){
             if(isPrime(array[i])){
@@ -17,16 +20,17 @@ public class PrimeNumbersService {
                 ind++;
             }
         }
-        return primeArray;
+        return new CustomArray(primeArray);
     }
 
-    private boolean isPrime(int num){
+    public boolean isPrime(int num){
         boolean isPrime = true;
         int i = 2;
         while(i < num && isPrime){
-            if(num % i != 0){
+            if(num % i == 0){
                 isPrime = false;
             }
+            i++;
         }
         return isPrime;
     }
