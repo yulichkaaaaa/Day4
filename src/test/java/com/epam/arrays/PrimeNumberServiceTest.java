@@ -1,6 +1,7 @@
 package com.epam.arrays;
 
 import com.epam.arrays.entity.CustomArray;
+import com.epam.arrays.reader.CustomFileReader;
 import com.epam.arrays.service.PrimeNumbersService;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

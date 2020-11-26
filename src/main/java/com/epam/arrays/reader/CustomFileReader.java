@@ -1,12 +1,12 @@
 package com.epam.arrays.reader;
 
 import com.epam.arrays.entity.CustomArray;
-import com.epam.arrays.entity.JaggedArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class CustomFileReader {
 
@@ -15,39 +15,25 @@ public class CustomFileReader {
     public CustomArray readCustomArray(String filename){
         int[] result = new int[0];
         int length = 0;
+        Scanner scanner = new Scanner(System.in);
         try (FileInputStream fileInputStream = new FileInputStream(filename)) {
-            while (fileInputStream.read() != -1) {
+            scanner = new Scanner(fileInputStream);
+            while (scanner.hasNext()) {
+                scanner.nextInt();
                 length++;
             }
             result = new int[length];
             fileInputStream.reset();
             for (int i = 0; i < length; i++) {
-                result[i] = fileInputStream.read();
-            }
-        } catch (IOException e) {
-            logger.info(e.getMessage());
-        }
-        return new CustomArray(result);
-    }
-
-    /*public JaggedArray readJaggedArray(String filename){
-        int[][] result = new int[0][];
-        int length = 0;
-        int temp;
-        try (FileInputStream fileInputStream = new FileInputStream(filename)) {
-            while ((temp = fileInputStream.read()) != -1) {
-                if(temp == '\n')
-                    length++;
-            }
-            result = new int[length][];
-            fileInputStream.reset();
-            while ((temp = fileInputStream.read()) != -1) {
-                while (temp != '\n'){
-
+                if(scanner.hasNext()) {
+                    result[i] = scanner.nextInt();
                 }
             }
         } catch (IOException e) {
             logger.info(e.getMessage());
+        } finally {
+            scanner.close();
         }
-    }*/
+        return new CustomArray(result);
+    }
 }

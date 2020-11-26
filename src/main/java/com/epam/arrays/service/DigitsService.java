@@ -11,14 +11,14 @@ public class DigitsService {
         int count = 0;
         for(int number : array){
              digits = numberToDigits(number);
-            if(digitsInNumber(number) == digitsCount && hasSameDigits(digits)){
+            if((digitsInNumber(number) == digitsCount) && !hasSameDigits(digits)){
                 length++;
             }
         }
         result = new int[length];
         for(int number : array){
             digits = numberToDigits(number);
-            if(digitsInNumber(number) == digitsCount && hasSameDigits(digits)){
+            if((digitsInNumber(number) == digitsCount) && !hasSameDigits(digits)){
                 result[count] = number;
                 count++;
             }
@@ -39,7 +39,7 @@ public class DigitsService {
         boolean isSame = false;
         for(int i = 0; i < digits.length; i++){
             for(int j = i + 1; j < digits.length; j++){
-                if(digits[i] == digits[i]){
+                if(digits[i] == digits[j]){
                     isSame = true;
                 }
             }
